@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hi Jeha</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        height: 100vh;
+      }
+      .images {
+        position: relative;
+        animation: move 5s;
+        animation-iteration-count: infinite;
+      }
+      @keyframes move {
+        0% {
+          left: -25%;
+        }
+        50% {
+          left: 25%;
+        }
+        100% {
+          left: -25%;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-sky-200 font-sans text-slate-800">
+    <div class="container mx-auto h-full">
+      <div class="flex flex-col h-full">
+        <div class="py-8 flex flex-col items-center">
+          <p class="text-4xl font-bold">Haiii Ajeng!!</p>
+          <p class="text-2xl font-semibold">Selamat malam</p>
+          <img
+            class="w-28 h-28 p-4 images"
+            src="https://stickercommunity.com/uploads/icon/1679393892mu6d7_icon.png"
+          />
+        </div>
+        <div class="relative h-1/2 flex flex-col items-center text-center px-4">
+          <p>
+            Aku tau aku ngeselin, tapi maafin aku yaa. Pleasee 🥺. Aku gamau
+            kamu marah gini
+          </p>
+          <p class="pt-2 font-medium mb-4">Kamu mau maafin aku ga?</p>
+          <div class="flex gap-2">
+            <button
+              id="btn-yes"
+              class="bg-sky-600 text-slate-50 px-4 py-1 rounded-xl active:bg-sky-800"
+            >
+              Mau
+            </button>
+            <button
+              class="bg-sky-600 text-slate-50 px-4 py-1 rounded-xl z-50"
+              id="btn"
+            >
+              Ngga dulu
+            </button>
+          </div>
+        </div>
+        <div class="text-center text-sm">
+          Made with love by hantuterbang special for jeha
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let button = document.getElementById("btn");
+      let buttonYes = document.getElementById("btn-yes");
+      let width = button.offsetWidth;
+      let height = button.offsetHeight;
+
+      button.addEventListener("mouseover", (event) => {
+        button.classList.add("absolute");
+        let adjustedHeight = Math.random() * 100;
+
+        let adjustedWidth = Math.random() * 100;
+        button.style.top = `calc(${adjustedHeight}%)`;
+        button.style.left = `calc(${adjustedWidth}%)`;
+      });
+
+      buttonYes.addEventListener("click", (event) => {
+        alert(
+          "Terima kasih yaa sayang. Maaf kalau kamu gasuka :). Nanti malam call mau kah? Jawabnya lewat whatsapp yaa"
+        );
+      });
+    </script>
+  </body>
+</html>
